@@ -1,0 +1,18 @@
+<div style="width:700px;">
+  <h1>Angular router</h1>
+  <div style="text-align:right">
+    <a href="javascript:;" *ngIf="authService.isLoggedIn(); else loginTmpl" (click)="logout()">Logout</a>
+    <ng-template #loginTmpl>
+      <a href="javascript:;" (click)="login()">Login</a>
+    </ng-template>
+  </div>
+  <nav class="nav nav-tabs">
+    <a [routerLink]="['/home']" routerLinkActive="active">Home</a>
+    <a [routerLink]="['/contacts', 'list']" routerLinkActive="active">Contacts</a>
+    <a [routerLink]="['/people']" routerLinkActive="active">People</a>
+    <a [routerLink]="['/about']" routerLinkActive="active">About</a>
+  </nav>
+
+  <router-outlet></router-outlet>
+</div>
+
